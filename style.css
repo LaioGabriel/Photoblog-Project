@@ -16,6 +16,7 @@
   
     
   }
+ 
   html, body, input{
     font-family: "Mulish", sans-serif;
   }
@@ -93,12 +94,68 @@ margin-top: 3.2rem;
 display: grid;
 grid-template-columns: repeat(3,1fr);
 gap: 2.2rem;
-
+}
+.itens{
+  cursor: pointer;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  background-color: var(--branco);
+  
+}
+.details{
+  position: relative;
+  z-index: 1;
+  background-color: var(--branco);
 }
 figure img{
   border-radius: 0.6rem 0.6rem 0 0;
+  transition-property: all;
+  transition-duration: 0.7s;
+}
+figure img:hover{
+  filter: hue-rotate(19deg) contrast(101%);
+  transform: scale(1.1) rotate(-0.8deg);
+}
+figure h2{
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+figure span{
+  font-size: 1rem;
+  background-color: var(--cinza100);
 }
 main h1{
   padding-top:1.5rem;
   font-size: 2.3rem;
+
+}
+header{
+  animation: move 2s;
+}
+footer{
+  animation: slide 2s;
+}
+.itens{
+animation: showup 1s;
+}
+@keyframes move {
+
+  from{
+    transform: translateY(-100%);
+  }
+}
+@keyframes slide {
+  from{
+    transform: translateY(100%);
+  }
+}
+
+@keyframes showup{
+  0%{
+    opacity: 0.2;
+    scale: 0.8;
+  }
+  50%{
+    transform: scale(1.1);
+  }
 }
